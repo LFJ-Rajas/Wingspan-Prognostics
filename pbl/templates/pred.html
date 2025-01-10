@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <div>
+            <h1>Equipment Failure Predictor</h1>
+            <p>The predicted value will be based on the following values:-
+                1. Unit Number<br><br>
+                2. Time Cycles<br><br>
+                3. Setting 1<br><br>
+                4. Setting 2<br><br>
+                5. Setting 3<br><br>
+                6. Values of Sensors from 1 to 21
+            </p>
+        </div>
+        <form id="prediction-form" name="mainForm" action="{{ url_for('predict') }}" method="POST">
+                 <input type="text" id="unit_nr" name="unit_nr" placeholder="Unit Number" required>
+    
+                <input type="text" id="time_cycles" name="time_cycles" placeholder="Time Cycles" required>
+       
+                <input type="text" id="setting_1" name="setting_1" placeholder="Setting 1" required>
+        
+                <input type="text" id="setting_2" name="setting_2" placeholder="Setting 2" required>
+
+                <input type="text" id="setting_3" name="setting_3" placeholder="Setting 3" required>
+            
+                <input type="text" id="s_1" name="s_1"   placeholder="Sensor 1" required>
+                <input type="text" id="s_2" name="s_2"   placeholder="Sensor 2" required>
+                <input type="text" id="s_3" name="s_3"   placeholder="Sensor 3" required>
+                <input type="text" id="s_4" name="s_4"   placeholder="Sensor 4" required>
+                <input type="text" id="s_5" name="s_5"   placeholder="Sensor 5" required>
+                <input type="text" id="s_6" name="s_6"   placeholder="Sensor 6" required>
+                <input type="text" id="s_7" name="s_7"   placeholder="Sensor 7" required>
+                <input type="text" id="s_8" name="s_8"   placeholder="Sensor 8" required>
+                <input type="text" id="s_9" name="s_9"   placeholder="Sensor 9" required>
+                <input type="text" id="s_10" name="s_10" placeholder="Sensor 10" required>
+                <input type="text" id="s_11" name="s_11" placeholder="Sensor 11" required>
+                <input type="text" id="s_12" name="s_12" placeholder="Sensor 12" required>
+                <input type="text" id="s_13" name="s_13" placeholder="Sensor 13" required>
+                <input type="text" id="s_14" name="s_14" placeholder="Sensor 14" required>
+                <input type="text" id="s_15" name="s_15" placeholder="Sensor 15" required>
+                <input type="text" id="s_16" name="s_16" placeholder="Sensor 16" required>
+                <input type="text" id="s_17" name="s_17" placeholder="Sensor 17" required>
+                <input type="text" id="s_18" name="s_18" placeholder="Sensor 18" required>
+                <input type="text" id="s_19" name="s_19" placeholder="Sensor 19" required>
+                <input type="text" id="s_20" name="s_20" placeholder="Sensor 20" required>
+                <input type="text" id="s_21" name="s_21" placeholder="Sensor 21" required>
+            <button type="submit" class="btn" name="submit">Predict</button>
+        </form>
+    </section>
+    <div class="result">
+            <span> RUL of Unit Number {{unit_nr}} is {{rul}}</span>
+    </div>
+</body>
+</html>
